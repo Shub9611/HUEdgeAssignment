@@ -1,0 +1,42 @@
+﻿
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[SearchProduct]
+	@Type varchar(max) = '',
+	@Desc varchar(max) = ''
+AS
+BEGIN
+	declare @Query nvarchar(max)
+
+	
+	if @Desc != '' and @Type != '' and @Desc is not null and @Type is not null
+	begin
+		--Declare @QueryType nvarchar(max)
+		--Declare @QueryDesc nvarchar(max)
+		set @Query = 'select * from Products where ProductType like ''%'+@Type+'%'' or ProductDescription like ''%'+@Desc+'%'''
+		--set @QueryDesc = 'select * from Products where ProductDescription like ''%'+@Desc+'%'''
+		--set @Query = @QueryType +' UNION ALL ' + @QueryDesc
+	end
+	else if @Type != '' and @Type is not null
+	begin
+		set @Query = 'select * from Products where ProductType like ''%'+@Type+'%'''
+	end
+	else if @Desc != '' and @Desc is not null
+	begin
+		set @Query = 'select * from Products where ProductDescription like ''%'+@Desc+'%'''
+	end
+
+	print @query
+	exec sp_executesql @query
+END

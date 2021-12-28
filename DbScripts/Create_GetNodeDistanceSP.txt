@@ -1,0 +1,18 @@
+﻿
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[GetNodeDistance]
+	@StartNodeId Bigint null
+AS
+BEGIN
+	select ROW_NUMBER() OVER (Order by (select 1)) as Id, NE.StartNode StartNodeId, 
+	N.NodeName StartNodeName, NE.EndNode EndNodeId, [dbo].[GetNodeName](NE.EndNode) EndNodeName, 
+	Ne.EdgeLength Distance from [dbo].[NodeEdges] NE join [dbo].[Nodes] N on NE.StartNode = N.NodeId 
+	where NE.[StartNode] = @StartNodeId  order by NE.[EdgeLength]
+END

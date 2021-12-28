@@ -1,0 +1,18 @@
+﻿
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION [dbo].[GetNodeName]
+(
+	@NodeId bigint
+)
+RETURNS varchar(max)
+AS
+BEGIN
+	declare @NodeName varchar(max)
+	set @NodeName = (select NodeName from Nodes where NodeId = @NodeId)
+	return @NodeName
+END

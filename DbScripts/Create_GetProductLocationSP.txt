@@ -1,0 +1,19 @@
+﻿
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[GetProductLocation]
+	@ProductId Bigint null
+AS
+BEGIN
+	select ROW_NUMBER() OVER (Order by (select 1)) as Id, P.ProductId, P.ProductType, N.NodeId, N.NodeName, N.NodeType, N.Zone
+	from Products P 
+	join Pallets PL on p.ProductId = pl.ProductId
+	join LPNs L on pl.LPNId = l.LPNId
+	join Nodes N on L.NodeId = N.NodeId
+	where p.ProductId = @ProductId
+END

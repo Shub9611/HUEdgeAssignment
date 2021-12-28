@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DepotManagementSystem</name>
+    </assembly>
+    <members>
+        <member name="M:DepotManagementSystem.Controllers.InboundOperationController.ReceiveApi(DepotManagementSystem.ViewModels.InboundOrderInputViewModel)">
+            <summary>
+            1.	Create a dummy order
+            2.	Verify Order Id
+            3.	Accept/Reject the order
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.InboundOperationController.CrossDockApi(DepotManagementSystem.ViewModels.ModifyPalletQuantityInputModel)">
+            <summary>
+            1.	Modify the Pallets quantities
+            2.	Assign the priority to the item.
+            3.	Assign items to pallets.
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.InboundOperationController.GetDistanceBetweenNodes(System.Int64)">
+            <summary>
+            Gets distance to all nodes from the current node
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.InboundOperationController.PutAwayApi(System.Int64,System.Int64)">
+            <summary>
+            1.	Move Items/pallets within warehouse
+            Refer GetDistanceBetweenNodes to get the distance between nodes if required for reference.
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.InboundOperationController.GetPalletQuantity">
+            <summary>
+            2.	Api to find out Quantities of items are available in the warehouse.
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.OutboundOperationController.ReceiveOrder(DepotManagementSystem.Models.OutboundOrder)">
+            <summary>
+            Generals
+            1.	Receive orders from customers.
+            2.	Override Items priority
+            3.	Provide discounts and offers for the customer
+            Order
+            1.	Approve/Reject the order
+            3.	Manage discounts on the orders.
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.OutboundOperationController.OrderPlanning(System.Int64)">
+            <summary>
+            Order Planning
+            1.	See items ready for the shipment
+            2.	Assign trucks for the shipment
+            Shipping
+            1.	Schedule time and day for the shipment
+            2.	Manage status of the shipment
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.SystemManagementController.InsertProduct(DepotManagementSystem.ViewModels.ProductInputViewModel)">
+            <summary>
+                1.	Define Products type for the warehouse
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.SystemManagementController.InsertPallet(DepotManagementSystem.ViewModels.PalletInputViewModel)">
+            <summary>
+            2.	Define Pallets items quantity
+            3.	Define Pallet with item type.
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.SystemManagementController.InsertNode(DepotManagementSystem.ViewModels.NodeInputViewModel)">
+            <summary>
+            4.	Defines Number of Nodes within warehouse
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.SystemManagementController.InsertLPN(DepotManagementSystem.ViewModels.LPNInputViewModel)">
+            <summary>
+            5.	Define LPN for Pallets
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.SystemManagementController.InsertNodeEdge(DepotManagementSystem.ViewModels.NodeEdgeInputViewModel)">
+            <summary>
+            Define Edges(Distance between nodes)   
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetPalletDetailsById(System.Int64)">
+            <summary>
+            1.	View Pallets Details
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetPalletDetails">
+            <summary>
+            1.	View Pallets Details
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetProductDetailsById(System.Int64)">
+            <summary>
+            2.	View Product Details
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetProductDetails">
+            <summary>
+            2.	View Product Details
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetProdLocation(System.Int64)">
+            <summary>
+            3.	View Product location
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.UpdateProduct(DepotManagementSystem.ViewModels.UpdateProductInputViewModel)">
+            <summary>
+            4.	Update Product Information
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetOutboundOrderStatus(System.Int64)">
+            <summary>
+            5.	View Orders status
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.UpdateLPN(DepotManagementSystem.ViewModels.UpdateLPNInputViewModel)">
+            <summary>
+            6.	Update/Manage LPN 
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.SearchProduct(System.String,System.String)">
+            <summary>
+            7.	Search APIs for the Products. Searches by Type or Desc or Both
+            </summary>
+        </member>
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.ViewAllOrderStatus">
+            <summary>
+            8.	View all the orders and their status
+            </summary>
+        </member>
+    </members>
+</doc>
