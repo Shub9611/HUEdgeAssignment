@@ -10,9 +10,9 @@ namespace DepotManagementSystem.Services.ServiceInterfaces
     public interface IWarehouseManagementService
     {
         Pallet GetPalletById(long id);
-        List<Pallet> GetPalletDetails();
+        List<Pallet> GetPalletDetails(int pageNumber);
         Product GetProductById(long id);
-        List<Product> GetProductDetails();
+        List<Product> GetProductDetails(int pageNumber);
         IEnumerable<ProductLocationResponseModel> GetProdLocation(long prodId);
         Product UpdateProductInfo(UpdateProductInputViewModel inputViewModel);
         string GetOutboundOrderStatus(long id);

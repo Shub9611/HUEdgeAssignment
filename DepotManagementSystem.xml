@@ -86,7 +86,7 @@
             1.	View Pallets Details
             </summary>
         </member>
-        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetPalletDetails">
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetPalletDetails(System.Int32)">
             <summary>
             1.	View Pallets Details
             </summary>
@@ -96,7 +96,7 @@
             2.	View Product Details
             </summary>
         </member>
-        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetProductDetails">
+        <member name="M:DepotManagementSystem.Controllers.WarehouseManagementController.GetProductDetails(System.Int32)">
             <summary>
             2.	View Product Details
             </summary>

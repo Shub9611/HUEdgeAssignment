@@ -40,9 +40,12 @@ namespace DepotManagementSystem.Controllers
         /// 1.	View Pallets Details
         /// </summary>
         [HttpGet("GetAllPalletDetails")]
-        public IActionResult GetPalletDetails()
+        public IActionResult GetPalletDetails(int pageNumber)
         {
-            var resp = _warehouseManagementService.GetPalletDetails();
+            if (pageNumber <= default(int))
+                return BadRequest("Enter valid page number");
+
+            var resp = _warehouseManagementService.GetPalletDetails(pageNumber);
 
             if (resp == null)
                 return NotFound("couldn't find");
@@ -69,9 +72,12 @@ namespace DepotManagementSystem.Controllers
         /// 2.	View Product Details
         /// </summary>
         [HttpGet("GetAllProductDetails")]
-        public IActionResult GetProductDetails()
+        public IActionResult GetProductDetails(int pageNumber)
         {
-            var res = _warehouseManagementService.GetProductDetails();
+            if (pageNumber <= default(int))
+                return BadRequest("Enter valid page number");
+
+            var res = _warehouseManagementService.GetProductDetails(pageNumber);
 
             if (res == null)
                 return NotFound("couldn't find");

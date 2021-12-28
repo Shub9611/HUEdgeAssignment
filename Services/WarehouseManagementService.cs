@@ -47,9 +47,13 @@ namespace DepotManagementSystem.Services
             return resp;
         }
 
-        public List<Pallet> GetPalletDetails()
+        public List<Pallet> GetPalletDetails(int pageNumber)
         {
-            var resp = _palletRepo.Get()?.ToList(); ;
+            //pagination logic
+            var take = 10 * pageNumber;
+            var skip = (pageNumber - 1) * 10;
+            
+            var resp = _palletRepo.Get()?.Skip(skip).Take(take).ToList();
 
             return resp;
         }
@@ -61,9 +65,13 @@ namespace DepotManagementSystem.Services
             return resp;
         }
 
-        public List<Product> GetProductDetails()
+        public List<Product> GetProductDetails(int pageNumber)
         {
-            var resp = _productRepo.Get()?.ToList(); ;
+            //pagination logic
+            var take = 10 * pageNumber;
+            var skip = (pageNumber - 1) * 10;
+
+            var resp = _productRepo.Get()?.Skip(skip).Take(take).ToList();
 
             return resp;
         }
