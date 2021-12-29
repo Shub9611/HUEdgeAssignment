@@ -45,6 +45,7 @@ namespace DepotManagementSystem
             services.AddTransient<IInboundOperationService, InboundOperationService>();
             services.AddTransient<ISystemManagementService, SystemManagementService>();
             services.AddTransient<IWarehouseManagementService, WarehouseManagementService>();
+            services.AddTransient<IOutboundOperationService, OutboundOperationService>();
         }
     
 
